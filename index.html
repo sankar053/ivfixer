@@ -56,8 +56,8 @@
           <div class="col-6 col-xl-4">
 		  
             <h3 class="mb-0 site-logo">
-			 <img src="images/ivicon.png" alt="Free Website Template by Free-Template.co" class="img-fluid">
-			<a href="index.html" class="h3 mb-0">Infinity Ventures<span class="text-primary"></span> </a></h3>
+			 <img src="images/logo.png" alt="Free Website Template by Free-Template.co" class="img-fluid">
+		<!--	<a href="index.html" class="h3 mb-0">Infinity Ventures<span class="text-primary"></span> </a>--></h3> 
           </div>
 
           <div class="col-10 col-md-8 d-none d-xl-block">
@@ -1212,7 +1212,7 @@ Each and every product of FIXER is carefully crafted to last long. We take utmos
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">
+                  <input type="button" onclick="loadDoc()" value="Send Message" class="btn btn-primary btn-md text-white">
                 </div>
               </div>
 
@@ -1292,10 +1292,20 @@ Each and every product of FIXER is carefully crafted to last long. We take utmos
   <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/jquery.sticky.js"></script>
   <script src="js/isotope.pkgd.min.js"></script>
-
-  
   <script src="js/main.js"></script>
-
+  <script>
+function loadDoc() {
+console.log("===========")
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange=function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log("==========this.status========", this.status);
+    }
+  };
+  xhttp.open("GET", 'https://api.elasticemail.com/v2/email/send?apikey=06F97884E517E8CD66817F8D7CDE781658CF40F73094DA703E61AF78D68E8EA6111CB6E63278CB76E9877654AD878143&subject=test subject&from=sankaraasn@gmail.com&fromName=sankar&sender=sankaraasn@gmail.com&senderName=test sender&msgFrom=&msgFromName=&replyTo=sankaraasn@gmail.com&replyToName=sankar&to=sankaraasn@gmail.com&msgTo=&msgCC=&msgBcc=&lists=&segments=&mergeSourceFilename=&dataSource=&channel=&bodyHtml=&bodyText=&charset=&charsetBodyHtml=&charsetBodyText=&encodingType=0&template=&headers_firstname=firstname: myValueHere&postBack=&merge_firstname=John&timeOffSetMinutes=10&poolName=My Custom Pool&isTransactional=false&attachments=&trackOpens=true&trackClicks=true&utmSource=source1&utmMedium=medium1&utmCampaign=campaign1&utmContent=content1&bodyAmp=&charsetBodyAmp=', true);
+  xhttp.send();
+}
+</script>
   
   </body>
 </html>
