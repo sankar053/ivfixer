@@ -1,7 +1,9 @@
 /* Base */
 html {
   overflow-x: hidden; }
-
+.hidden {
+    display: none;
+}
 body {
   line-height: 1.7;
   color: gray;
